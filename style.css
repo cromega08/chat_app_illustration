@@ -22,7 +22,7 @@ body {
 }
 
 section {
-    aspect-ratio: 9/16;
+    aspect-ratio: 9/17;
     width: 37.5vw;
     border: solid;
     border-width: .75em;
@@ -35,8 +35,8 @@ section {
 
 button {
     cursor: pointer;
-    height: 2.5vh;
-    width: 2.5vw;
+    height: 1.5em;
+    width: 1.5em;
     border-radius: 50%;
     font-weight: 900;
     border: none;
@@ -66,11 +66,16 @@ aside > p {
 }
 
 footer {
-    color: var(--third);
+    margin-bottom: 1em;
+    border-radius: 1em;
+    padding: .5em;
+    background-color: var(--contrast);
+    color: var(--main);
 }
 
 a:link, a:visited {
-    color: var(--contrast);
+    color: var(--second);
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -208,4 +213,181 @@ input::placeholder {
 #back {
     background-color: var(--main);
     color: var(--contrast);
+}
+
+@media (max-width: 400px){
+    section {
+        width: 80vw;
+    }   
+    aside {
+        width: 80vw;
+    }
+    .c-message {
+        width: 45vw;
+    }
+    .u-message {
+        width: 45vw;
+    }
+    .u-pictures > img {
+        width: 15vw;
+    }
+    .c-payment {
+        width: 45vw;
+    }
+    #avatar {
+        width: 11vw;
+    }
+    #notch {
+        width: 40vw;
+    }
+    input {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 401px) and (max-width:850px) {
+    
+    section {
+        width: 45vw;
+    }   
+    aside {
+        width: 65vw;
+    }
+    .c-message {
+        width: 25vw;
+    }
+    .u-message {
+        width: 25vw;
+    }
+    .u-pictures > img {
+        width: 9vw;
+    }
+    .c-payment {
+        width: 25vw;
+    }
+    #header {
+        width: 45vw;
+    }
+    #chat {
+        width: 43vw;
+    }
+    #answer {
+        width: 41vw;
+    }
+    #avatar {
+        width: 8vw;
+    }
+    #notch {
+        width: 30vw;
+    }
+    input {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 950px) and (max-width: 1400px){
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        aspect-ratio: 9/18;
+        width:30vw;
+        margin: 2.5vh 5vw;
+        align-self: flex-start;
+    }   
+    aside {
+        width: 35vw;
+    }
+    footer {
+        position: absolute;
+        bottom: .5em;
+        justify-self: center;
+        align-self: flex-end;
+    }
+    .c-message {
+        width: 20vw;
+    }
+    .u-message {
+        width: 20vw;
+    }
+    .u-pictures > img {
+        width: 7vw;
+    }
+    .c-payment {
+        width: 18vw;
+    }
+    #header {
+        width: 30vw;
+    }
+    #chat {
+        width: 28.8vw;
+    }
+    #answer {
+        width: 26.75vw;
+    }
+    #avatar {
+        width: 4vw;
+    }
+    #notch {
+        width: 17.5vw;
+    }
+    input {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 1401px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        aspect-ratio: 9/18;
+        width:21vw;
+        margin: 4vh 5vw;
+        align-self: flex-start;
+    }   
+    aside {
+        width: 25vw;
+    }
+    footer {
+        position: absolute;
+        bottom: .5em;
+        justify-self: center;
+        align-self: flex-end;
+    }
+    .c-message {
+        width: 14vw;
+    }
+    .u-message {
+        width: 14vw;
+    }
+    .u-pictures > img {
+        width: 4.8vw;
+    }
+    .c-payment {
+        width: 14vw;
+    }
+    #header {
+        width: 21vw;
+    }
+    #chat {
+        width: 20.2vw;
+    }
+    #answer {
+        width: 18.2vw;
+    }
+    #avatar {
+        width: 3.8vw;
+    }
+    #notch {
+        height: 2vh;
+        width: 15vw;
+    }
+    input {
+        width: 60vw;
+    }
 }
