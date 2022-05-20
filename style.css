@@ -3,13 +3,15 @@
     --second: #570A57;
     --third: #A91079;
     --contrast: #F806CC;
+    --phone: #3a035c;
 }
 
-* {
+/* * {
     outline: solid
-}
+} */
 
 body {
+    overflow-x: hidden;
     min-height: 100vh;
     min-width: 100vw;
     background-color: #330033;
@@ -22,30 +24,77 @@ body {
 section {
     aspect-ratio: 9/16;
     width: 37.5vw;
+    border: solid;
+    border-width: .75em;
+    border-radius: 2.25em;
+    border-color: var(--phone);
     background-image: linear-gradient(to top, var(--third) 0%, var(--second) 100%);
     display: grid;
 }
 
-/* idea de eliminar los bloques de mensajes 
-y dejarlos flotando en la pantalla */
 
-section > div > p {
-    background-image: linear-gradient(to right, var(--second) 0%, var(--main) 100%);
+button {
+    cursor: pointer;
+    height: 2.5vh;
+    width: 2.5vw;
+    border-radius: 50%;
+    font-weight: 900;
+    border: none;
+    background-color: var(--contrast);
+    color: var(--main);
+    margin: 0 1em;
 }
 
 aside {
-    width: 50vw;
+    text-shadow: .1em .1em var(--main);
+    width: 45vw;
+    text-align: center;
+    margin: 1em;
+    display: grid;
+    place-items: center;
+}
+
+aside > h1 {
+    margin: 0;
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+aside > p {
+    margin-bottom: 0;
+    font-size: 1.2em;
+}
+
+footer {
+    color: var(--third);
+}
+
+a:link, a:visited {
+    color: var(--contrast);
+    text-decoration: none;
+}
+
+img {
+    cursor: pointer;
+}
+
+.message {
+    padding: .5em;
+    margin: .5em 0;
 }
 
 .c-message {
     width: 20vw;
+    border-radius: .75em .75em .75em 0;
     justify-self: left;
 }
 
 .u-message {
     width: 20vw;
+    border-radius: .75em .75em 0 .75em;
     align-self: flex-end;
 }
+
 
 .u-pictures {
     align-self: flex-end;
@@ -53,23 +102,47 @@ aside {
 
 .u-pictures > img {
     aspect-ratio: 1/1;
-    width: 5vw;
+    width: 7.5vw;
     margin: 0 .25em;
+    border-radius: 1em;
+
 }
 
 .c-payment {
+    cursor: pointer;
     width: 18.5vw;
-    background-image: linear-gradient(to right, var(--contrast) 0%, var(--third) 100%);
-    color: var(--main);
-    margin: 1em 0;
-    padding: .25em;
+    border-radius: .75em .75em .75em 0;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
 }
 
 .c-payment > p {
-    margin: .25em 0;
+    width: fit-content;
+    margin: .35em 0;
+}
+
+.c-payment > p:last-child {
+    border-radius: 1em;
+    background-color: var(--main);
+    color: var(--contrast);
+    padding: .2em .5em;
+}
+
+
+.c-message, .c-payment ,#header {
+    background-image: linear-gradient(to right, var(--third) 0%, var(--contrast) 100%);
+    color: var(--main);
+}
+
+
+.u-message, #answer{
+    background-image: linear-gradient(to right, var(--second) 0%, var(--main) 100%);
+    color: var(--contrast);
 }
 
 #chat {
+    padding: 0 .5em;
     display: flex;
     flex-direction: column;
 }
@@ -79,29 +152,60 @@ aside {
     aspect-ratio: 1/1;
     width: 5.5vw;
     border-radius: 50%;
-    margin: .75em;
+    margin: 0 .75em 0 0; 
 }
 
 #header {
-    height: 8vh;
-    color: var(--main);
-    background-image: linear-gradient(to right, var(--third) 0%, var(--contrast) 100%);
+    height: 10vh;
+    border-radius: 1.5em 1.5em 0 0;
+    font-weight: 600;
+    font-style: oblique;
+    padding: 0;
+    display: grid;
+}
+
+#c {
     display: flex;
+    justify-self: flex-start;
     justify-items: flex-start;
     align-items: center;
 }
 
-/* Check color of messages, match color of chat co-speaker and their messages
-the interface recommend make it more darker and user more lighter */
-
-#message {
-    height: 5vh;
-    background-image: linear-gradient(to right, var(--second) 0%, var(--main) 100%);
-    display: flex;
-    padding: .25vh 1vw;
-    justify-content: space-between;
+#c > div > p {
+    margin: .25em;
 }
 
-#message > p {
-    width: 15vw;
+#notch {
+    aspect-ratio: 6/1;
+    width: 20vw;
+    border-radius: 0 0 1em 1em;
+    background-color: var(--phone);
+    margin:  0;
+    display: grid;
+    justify-self: center;
+}
+
+#answer {
+    height: 5vh;
+    margin: .5em;
+    padding: .25vh 1vw;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    width: 25vw;
+    border: none;
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: var(--contrast);
+}
+
+#back {
+    background-color: var(--main);
+    color: var(--contrast);
 }
